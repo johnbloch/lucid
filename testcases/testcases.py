@@ -1,0 +1,112 @@
+from z3 import *
+from ip_utils import *
+import json
+import subprocess
+import os
+
+# given 2 programs prog1.dpt and prog2.dpt, and a predicate/relation pair:
+# 1) use z3 to find input packet that satisfies predicate 
+# 2) create config files for prog1 and prog2 with same input packet
+# 3) read outputs of prog1 and prog2 and use relation to either pass/fail test case
+
+# NEXT STEPS: 
+# 1) figure out how to use -i flag to get output events as JSON X
+# 2) use simplest possible topology X
+# 3) implement ip in prefix X
+# 3) start thinking about regular languages
+
+class IP_pkt:
+    def __init__(self, src_ip, dst_ip, port): 
+        self.src_ip = src_ip
+        self.dst_ip = dst_ip
+        self.port = port
+    def __repr__(self):
+        return (f"source_ip={int_to_ip(self.src_ip)}, destination_ip={int_to_ip(self.dst_ip)}, port={self.port}")
+
+# takes a predicate and generates a packet that satisfies the predicate
+def gen_pkt(predicate):
+    src_ip = Int('src_ip')
+    dst_ip = Int('dst_ip')
+    port = Int('port')
+    s=Solver()
+    s.add(predicate)
+    if s.check() == sat:
+        m = s.model()
+        packet = IP_pkt(m[src_ip].as_long(), m[dst_ip].as_long(), m[port].as_long())
+        return packet
+    else:
+        return None
+
+# takes a packet object and file name and generates a config file that sends the packet 
+def gen_config(pkt, file_name):
+    config = {}
+    config["max time"] = 9999999999
+    event = {}
+    event["name"] = "ip_pkt"
+    event["args"] = [pkt.src_ip, pkt.dst_ip]
+    event["locations"] = [f"0:{pkt.port}"]
+    config["events"] = [event]
+    json_obj = json.dumps(config, indent=4)
+    with open(file_name+".json", "w") as file:
+        file.write(json_obj)
+
+# finds the folder where the interpreter is located
+def get_lucid_dir():
+    curr_dir = os.getcwd()
+    while True:
+        if "dpt" in os.listdir(curr_dir):
+            return curr_dir
+        curr_dir = os.path.dirname(curr_dir)
+
+# parses lucid program output to create list of packet objects 
+def parse_lucid_output(output): 
+    output = json.loads(output)
+    packet = IP_pkt(int(output["args"][0]), int(output["args"][1]), int(output["locations"][0].split(":")[1]))
+    return packet
+        
+# runs Lucid program and returns output of a single switch
+def run_prog(prog):
+    path = os.path.join(os.getcwd(), prog) 
+    r = subprocess.Popen(["./dpt", path, "-i"], stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            stdin=subprocess.PIPE, text=True, cwd=get_lucid_dir())
+    stdout, stderr = r.communicate(timeout=10)
+    pkt = parse_lucid_output(stdout)
+    return pkt
+
+# takes outputs of prog1 and prog2 and compares them using the relation specified by programmer
+def validate_outputs(out1, out2, relation):
+    return relation(out1, out2)
+
+def main():
+    with open('spec.py', 'r') as file:
+        file_contents = file.read()
+
+    # Create a dictionary to store local variables
+    local_vars = {}
+
+    # Evaluate the contents of the spec file
+    exec(file_contents, globals(), local_vars)
+    for key in ['prog1', 'prog2', 'predicate', 'relation']:
+      if key not in local_vars:
+        print(f"the spec must define {key}")
+        exit(1)
+    prog1, prog2, predicate, relation = local_vars['prog1'], local_vars['prog2'], local_vars['predicate'], local_vars['relation']
+    # 1) use z3 to find input packet that satisfies predicate
+    packet = gen_pkt(predicate)
+    # 2) create config files for prog1 and prog2 with same input packet
+    gen_config(packet, prog1)
+    gen_config(packet, prog2)
+    
+    # 3) read outputs of prog1 and prog2 and use relation to either pass/fail test case
+    out1 = run_prog(prog1 + ".dpt")
+    out2 = run_prog(prog2 + ".dpt")
+    if validate_outputs(out1, out2, relation):
+        print("Test Case Passed")
+    else:
+        print("Test Case Failed")
+    print("prog1 => " + str(out1))
+    print("prog2 => " + str(out2))
+
+if __name__ == "__main__":
+    main()
