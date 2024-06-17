@@ -1,0 +1,12 @@
+event ip_pkt (int src, int dst);
+event count_src (int src);
+
+// component: basic packet forwarding
+fun int get_output_port(int dst) {
+    if()
+}
+handle ip_pkt(int src, int dst) {
+    // ingress_port 
+    int out_port = get_output_port(dst);
+    generate_port(out_port, ip_pkt(src, dst));
+}
