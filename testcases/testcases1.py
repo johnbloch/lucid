@@ -92,20 +92,24 @@ def run_prog(prog):
     return pkt_stream
 
 # takes outputs of prog1 and prog2 and compares them using the relation specified by programmer
-def validate_outputs(out1, out2, relation):
-    return relation(out1, out2)
+def validate_outputs(out1, out2, relation, relation_char_mapping):
+    char_representation = rstr.xeger(relation)
+    for i in range(len(char_representation)):
+        ch = char_representation[i]
+        if not relation_char_mapping[ch](out1[i], out2[i]):
+            return False
+    return True
 
 def main():
-    with open('spec2.py', 'r') as file:
+    with open('spec1.py', 'r') as file:
         file_contents = file.read()
 
+    # Create a dictionary to store local variables
+    local_vars = {}
+
     # Evaluate the contents of the spec file
-    exec(file_contents, globals())
-    prog1 = globals()['prog1']
-    prog2 = globals()['prog2']
-    predicate_char_mapping = globals()['predicate_char_mapping']
-    predicates = globals()['predicates']
-    relations = globals()['relations']
+    exec(file_contents, globals(), local_vars)
+    prog1, prog2, predicate_char_mapping, relation_char_mapping, predicates, relations = local_vars['prog1'], local_vars['prog2'], local_vars['predicate_char_mapping'], local_vars['relation_char_mapping'], local_vars['predicates'], local_vars['relations']
     for i in range(len(predicates)):
         predicate, relation = predicates[i], relations[i]
         # 1) use z3 to find input packet that satisfies predicate
@@ -117,11 +121,11 @@ def main():
         # # 3) read outputs of prog1 and prog2 and use relation to either pass/fail test case
         out1 = run_prog(prog1 + ".dpt")
         out2 = run_prog(prog2 + ".dpt")
-
-        if validate_outputs(out1, out2, relation):
-            print("Test Case Passed")
+        
+        if validate_outputs(out1, out2, relation, relation_char_mapping):
+            print(f"Test Case {i+1} Passed")
         else:
-            print("Test Case Failed")
+            print(f"Test Case {i+1} Failed")
         print("prog1 => " + str(out1))
         print("prog2 => " + str(out2))
 

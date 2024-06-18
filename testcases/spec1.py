@@ -13,9 +13,9 @@ predicate_char_mapping = {
     "b": And(is_in_prefix(src_ip, 0b00000000, 0), is_in_prefix(dst_ip, 0b00000000, 6), port == 1),
     "c": And(is_in_prefix(src_ip, 0b00000000, 0), is_in_prefix(dst_ip, 0b00000000, 0), Or(port == 0, port == 1)) 
 }
-def f(out1, out2):
-    return sum(1 for pkt in out1 if pkt.port == 0) == 4 and sum(1 for pkt in out2 if pkt.port == 0) == 3
-def g(out1, out2):
-    return sum(1 for pkt in out1 if pkt.port == 0) == 3 and sum(1 for pkt in out2 if pkt.port == 0) == 4
-predicates = [r'a{3}b{3}c', r'a{4}b{2}c']
-relations = [f, g]
+relation_char_mapping = {
+    "a": lambda out1, out2: out1.port == 1 and out2.port == 0,
+    "b": lambda out1, out2: out1.port == 0 and out2.port == 1
+}
+predicates = [r'a{3}b{3}c', r'b{7}']
+relations = [r'a{3}b{4}', r'b{7}']
