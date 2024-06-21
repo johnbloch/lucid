@@ -10,7 +10,6 @@ fun int get_output_port(int dst) {
     }
 }
 handle ip_pkt(int src, int dst) {
-    // ingress_port 
     int out_port = get_output_port(dst);
     generate_port(out_port, ip_pkt(src, dst));
 }
