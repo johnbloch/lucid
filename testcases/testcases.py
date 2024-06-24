@@ -6,6 +6,8 @@ import subprocess
 import os
 import rstr
 
+# next step (monday/tuesday): make predicate text input and create parser
+
 class IP_pkt:
     def __init__(self, src_ip, dst_ip, port): 
         self.src_ip = src_ip
