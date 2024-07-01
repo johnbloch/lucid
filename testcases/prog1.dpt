@@ -4,9 +4,17 @@ event count_src (int src);
 // component: basic packet forwarding
 fun int get_output_port(int dst) {
     if(252 <= dst && dst <= 255){
-        return 1;
+        if(true){
+            return 1;
+        }else{
+            return 0;
+        }
     } else {
-        return 0;
+        if(false){
+            return 1;
+        }else{
+            return 0;
+        }
     }
 }
 handle ip_pkt(int src, int dst) {

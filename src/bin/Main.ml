@@ -16,11 +16,11 @@ let find_spec_file dpt_file =
     else None)
 ;;
 
-let main () =
+let main () = 
   let target_filename = Cmdline.parse () in
-  Cmdline.set_dpt_file target_filename;
+  Cmdline.set_dpt_file target_filename; 
   let ds = Input.parse target_filename in
-  let renaming, ds =
+  let renaming, ds = 
     (* Profile.time_profile "frontend" @@ fun () -> *)
     FrontendPipeline.process_prog Builtins.interp_builtin_tys ds
   in

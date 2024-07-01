@@ -278,10 +278,10 @@ match s with
   let s2_str =
     match s2.s with
     | SNoop -> ""
-    | _ -> "else {\n" ^ (stmt_to_string s2 |> indent_body) ^ "\n}"
+    | _ -> "else :-( {\n" ^ (stmt_to_string s2 |> indent_body) ^ "\n}"
   in
   Printf.sprintf
-    "if (%s) {\n%s\n} %s"
+    "if :-) (%s) {\n%s\n} %s"
     (exp_to_string e)
     (stmt_to_string s1 |> indent_body)
     s2_str
