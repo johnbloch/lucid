@@ -16,10 +16,13 @@ let main () =
     let v = 
       object (self)
         inherit [_] s_iter
-        method! visit_SIf dummy _ left right =
-          print_endline("Hi");
+        method! visit_SIf dummy e left right =
+          print_string (Printing.exp_to_string e);
+          print_string " (";
           self#visit_statement dummy left;
+          print_string ") (";
           self#visit_statement dummy right;
+          print_string ")";
       end
     in 
     v#visit_decls () ds
@@ -28,7 +31,25 @@ let main () =
 let _ = main ()
 
 (*
-TODO:
-1) look into JSON representation of AST (using only if-else nodes for now)
-2) implement Lucid program -> ast_parser.ml -> JSON AST
+
+fun int get_output_port(int dst) {
+    if(dst > 100){
+        if(dst < 50){
+            return 0;
+        }else{
+            return 1;
+        }
+    } else {
+        if(dst < 150){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+}
+
+==>
+
+dst>100 (dst < 50 () ()) (dst < 150 () ())
+
 *)
