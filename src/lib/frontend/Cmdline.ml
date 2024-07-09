@@ -36,7 +36,7 @@ type config =
   ; mutable optimal_memop_input_alloc : bool
     (* find an allocation of memop inputs to sALU input register that requires no extra copy operations.
        In some cases, this may create larger PHV clusters. *)
-  
+  (*add flag?*)
   }
 
 (* TODO: We might want to add more parameters controlling which transformations

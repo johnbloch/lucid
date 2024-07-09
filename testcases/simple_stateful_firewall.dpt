@@ -1,0 +1,48 @@
+
+const int ARR_LEN = 1024;
+size LOG_ARR_LEN = 10;
+
+// store an 8-bit boolean for each flow.
+// flow_exists[i] = 1 means that we saw an internal 
+// host initiate the flow that "owns" slot i
+// flow_exists[i] = 0 means that we did not see an
+// internal host initiate the flow that "owns" slot i
+global Array.t<8> flow_exists = Array.create(ARR_LEN);
+
+const int seed = 7; // seed for a hash function
+
+event pkt_out(int src, int dst, int sport, int dport);
+
+// represents a packet from a trusted internal host
+event from_internal(int src, int dst, int sport, int dport) {
+    // "idx" is where we record information about this 
+    // flow in the flow_exists array
+    // we hash the 4-tuple (src, dst, sport, dport) to
+    // get a number between 0 and ARR_LEN-1
+    // note that there might be collisions between flows, 
+    // but we ignore that for a simple version
+    int<LOG_ARR_LEN> idx = hash<LOG_ARR_LEN>(seed, src, dst, sport, dport);
+    // this is a packet from the internal network, so 
+    // we just remember that the flow exists.
+    Array.set(flow_exists, idx, 1);
+    // and finally send the packet out of some port
+    // (the firewall doesn't decide _which_ port, so 
+    // we just do something arbitrary here for now)
+    generate_port(1, pkt_out(src, dst, sport, dport));
+}
+
+// represents a packet from an untrusted external host
+event from_external(int src, int dst, int sport, int dport) {
+    // this is the reverse direction of the flow, 
+    // so we have to swap the order of (src, dst) 
+    // and (sport, dport) to look up the flow_exists array
+    int<LOG_ARR_LEN> idx = hash<LOG_ARR_LEN>(seed, dst, src, dport, sport);
+    // if the flow exists, we allow the packet to pass
+    // otherwise, we drop it (no generate)
+    if (Array.get(flow_exists, idx) == 1) {
+        printf("Allowing external packet from %d to %d\n", src, dst);
+        generate_port(1, pkt_out(src, dst, sport, dport));
+    } else {
+        printf("Dropping external packet from %d to %d\n", src, dst);
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "max time": 9999999999,
+    "events":[
+        {"name":"from_external", "args":[1, 2, 11, 22]},
+        {"name":"from_internal", "args":[3, 4, 33, 44]},
+        {"name":"from_external", "args":[4, 3, 44, 33]}
+    ]
+}

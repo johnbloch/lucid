@@ -438,6 +438,7 @@ let assign_int_slotids env =
 (* FIXME: The way this handles modules is just wrong, it needs to add prefixes
    to stuff when leaving the module, not when first adding them. Man, modules suck. *)
 let analyze_prog ds =
+ (* let stuff = ref [] in*)
   let v =
     object (self)
       inherit [_] s_iter
