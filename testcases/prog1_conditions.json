@@ -1,0 +1,12 @@
+{
+  "variables": [ "dst", "port", "src" ],
+  "conditions": [
+    { "condition": "dst<500", "smtlib": "(< dst 500)" },
+    { "condition": "dst<500", "smtlib": "(< dst 500)" },
+    { "condition": "src>1000", "smtlib": "(> src 1000)" },
+    {
+      "condition": "src>1000&&port<0",
+      "smtlib": "(and (> src 1000) (< port 0))"
+    }
+  ]
+}

@@ -34,6 +34,8 @@ default:
 	cp -f _build/default/src/bin/compiler.exe dptc
 	dune build src/bin/lucidcc.exe
 	cp -f _build/default/src/bin/lucidcc.exe lucidcc
+	dune build src/bin/ast_parser.exe
+	cp -f _build/default/src/bin/ast_parser.exe astparser
 
 macos-release:
 	./scripts/build_macos_release.sh
@@ -48,6 +50,8 @@ all:
 	cp -f _build/default/src/bin/compiler.exe dptc
 	dune build src/bin/lucidcc.exe
 	cp -f _build/default/src/bin/lucidcc.exe lucidcc
+	dune build src/bin/ast_parser.exe
+	cp -f _build/default/src/bin/ast_parser.exe astparser
 	mkdir -p bin
 	dune build src/bin/dockerUtils.exe
 	cp -f _build/default/src/bin/dockerUtils.exe bin/dockerUtils
