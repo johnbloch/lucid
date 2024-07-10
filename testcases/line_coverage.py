@@ -2,8 +2,8 @@ import os
 import subprocess
 import sys
 from z3 import *
+import testcases
 import json
-import re
 
 # write a script that takes prog_conditions.json and generates a list of inputs that achieves full line coverage
 # 1) create a AST class with if/else nodes
@@ -32,6 +32,7 @@ def run_astparser(prog):
     os.chdir(get_astparser_dir())
     subprocess.run(f"./astparser {path}", shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
+# reads the string representation of program's AST
 def read_ast_field(prog):
     json_filename = f"{prog.split('.')[0]}_conditions.json"
     json_path = os.path.join(os.path.dirname(__file__), json_filename)
@@ -39,6 +40,7 @@ def read_ast_field(prog):
         data = json.load(json_file)
     return data["AST"]
 
+# gets the conditions in SMT-LIB  
 def read_smt_mappings(prog):
     json_filename = f"{prog.split('.')[0]}_conditions.json"
     json_path = os.path.join(os.path.dirname(__file__), json_filename)
@@ -46,6 +48,7 @@ def read_smt_mappings(prog):
         data = json.load(json_file)
     return {cond["condition"]: cond["smtlib"] for cond in data["conditions"]}
 
+# get the variables in the program
 def get_variables(prog):
     json_filename = f"{prog.split('.')[0]}_conditions.json"
     json_path = os.path.join(os.path.dirname(__file__), json_filename)
@@ -53,6 +56,7 @@ def get_variables(prog):
         data = json.load(json_file)
     return data["variables"]
 
+# convert string ast to ASTNode
 def parse_ast(s):
     if not s:
         return None
@@ -78,6 +82,7 @@ def parse_ast(s):
     right_node = parse_ast(right_subtree)
     return ASTNode(condition, left_node, right_node)
 
+# get all the paths from root to leaves
 def collect_paths(ast, curr_path):
     if ast == None:
         yield curr_path 
@@ -85,6 +90,7 @@ def collect_paths(ast, curr_path):
     yield from collect_paths(ast.if_branch, curr_path + [(ast.condition, True)])
     yield from  collect_paths(ast.else_branch, curr_path + [(ast.condition, False)])
 
+# takes variables and list of constraints and writes to smt2 file
 def generate_smt_lib(vars, constraints, prog):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
@@ -127,5 +133,4 @@ if __name__ == "__main__":
             model = solver.model()
             print(model)
         else:
-            print("UNSAT")
-    
+            print("dead code")

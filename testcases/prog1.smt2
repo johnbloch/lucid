@@ -1,6 +1,7 @@
 (declare-const dst Int)
+(declare-const ingress_port Int)
 (declare-const src Int)
-(assert (not (and (> src 100) (< dst 2003))))
+(assert (not (and (and (> src 100) (< dst 2003)) (= ingress_port 0))))
 (assert (not (> dst 150)))
 (check-sat)
 (get-model)

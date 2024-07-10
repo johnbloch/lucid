@@ -2,9 +2,9 @@ event ip_pkt (int src, int dst);
 event count_src (int src);
 
 // component: basic packet forwarding
-fun int get_output_port(int src, int dst) {
-    if(src > 100 && dst < 2003){
-        if(src < 150){
+fun int get_output_port(int src, int dst, int port) {
+    if(src > 100 && dst < 2003 && port == 0){
+        if(src < 90){
             return 1;
         }else{
             return 0;
@@ -18,6 +18,6 @@ fun int get_output_port(int src, int dst) {
     }
 }
 handle ip_pkt(int src, int dst) {
-    int out_port = get_output_port(src, dst);
+    int out_port = get_output_port(src, dst, ingress_port);
     generate_port(out_port, ip_pkt(src, dst));
 }
