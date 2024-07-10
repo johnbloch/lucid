@@ -6,6 +6,7 @@ open Yojson.Basic
 
 let vars = ref []
 let conditions = ref []
+let ast_rep = ref ""
 
 let rec collect_vars = function
   | EVal v -> []
@@ -65,24 +66,25 @@ let main () =
           let condition_str = Printing.exp_to_string e in
           let condition_smtlib = condition_to_smtlib e.e in
           conditions := (condition_str, condition_smtlib) :: !conditions;
-          print_string (Printing.exp_to_string e);
-          print_string " (";
+          ast_rep := !ast_rep ^ Printf.sprintf "%s (" (Printing.exp_to_string e);
           self#visit_statement dummy left;
+          ast_rep := !ast_rep ^ ") (";
           print_string ") (";
           self#visit_statement dummy right;
-          print_string "), ";
+          ast_rep := !ast_rep ^ "), ";
       end
     in 
     v#visit_decls () ds
   in 
   get_if_nodes ds;
   (* Print all collected variables *)
+  ast_rep := String.sub !ast_rep 0 (String.length !ast_rep - 2);
   let unique_vars = List.sort_uniq String.compare !vars in
   let conditions_json = List.map (fun (cond_str, cond_smtlib) ->
     `Assoc [("condition", `String cond_str); ("smtlib", `String cond_smtlib)]
   ) !conditions in
   let json = `Assoc [("variables", `List (List.map (fun var -> `String var) unique_vars));
-  ("conditions", `List conditions_json)] in
+  ("conditions", `List conditions_json); ("AST", `String !ast_rep)] in
   let base_filename = Filename.remove_extension target_filename in
   let json_str = Yojson.Basic.pretty_to_string json in
   let oc = open_out (base_filename^"_conditions.json") in

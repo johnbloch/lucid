@@ -1,47 +1,23 @@
-event ip_pkt (int src, int dst, int port);
+event ip_pkt (int src, int dst);
 event count_src (int src);
 
 // component: basic packet forwarding
-<<<<<<< HEAD
-fun int get_output_port(int src, int dst, int port) {
-    if(src > 1000 && port < 0){
-        src = src+1;
-        if(src > 1000){
-            src = src+1;
-        }else{
-            src = src-1;
-        }
-        if(dst < 500){
-            dst = dst+1;
-        }else{
-            dst = dst-1;
-        }
-    }else{
-        src = src-1;
-=======
-fun int get_output_port(int dst) {
-    if(dst < 100){
-        if(dst < 50){
-            return 0;
-        }else{
-            return 1;
-        }
-    } else {
-        if(dst < 150){
+fun int get_output_port(int src, int dst) {
+    if(src > 100 && dst < 200){
+        if(src < 150){
             return 1;
         }else{
             return 0;
         }
->>>>>>> ca8709a50e69cc849dd5dddf3b53c412c8787cfb
-    }
-    if(dst < 500){
-        dst = dst+1;
     }else{
-        dst = dst-1;
+        if(dst > 150){
+            return 1;
+        }else{
+            return 0;
+        }
     }
-    return 1;
 }
-handle ip_pkt(int src, int dst, int port) {
-    int out_port = get_output_port(src, dst, port);
-    generate_port(out_port, ip_pkt(src, dst, port));
+handle ip_pkt(int src, int dst) {
+    int out_port = get_output_port(src, dst);
+    generate_port(out_port, ip_pkt(src, dst));
 }

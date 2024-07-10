@@ -1,12 +1,12 @@
 {
-  "variables": [ "dst", "port", "src" ],
+  "variables": [ "dst", "src" ],
   "conditions": [
-    { "condition": "dst<500", "smtlib": "(< dst 500)" },
-    { "condition": "dst<500", "smtlib": "(< dst 500)" },
-    { "condition": "src>1000", "smtlib": "(> src 1000)" },
+    { "condition": "dst>150", "smtlib": "(> dst 150)" },
+    { "condition": "src<150", "smtlib": "(< src 150)" },
     {
-      "condition": "src>1000&&port<0",
-      "smtlib": "(and (> src 1000) (< port 0))"
+      "condition": "src>100&&dst<200",
+      "smtlib": "(and (> src 100) (< dst 200))"
     }
-  ]
+  ],
+  "AST": "src>100&&dst<200 (src<150 () (), ) (dst>150 () (), )"
 }
