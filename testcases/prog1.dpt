@@ -3,7 +3,7 @@ event count_src (int src);
 
 // component: basic packet forwarding
 fun int get_output_port(int src, int dst) {
-    if(src > 100 && dst < 200){
+    if(src > 100 && dst < 2003){
         if(src < 150){
             return 1;
         }else{
