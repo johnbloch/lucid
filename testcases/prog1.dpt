@@ -21,7 +21,7 @@ const port EXTERNAL_PORT = 10;
 // one entry for each local device
 fun port fwd(int dst) {
   if(dst == 100){
-    return 1;
+    return 2;
   }
   if(dst == 200){
     return 2;
