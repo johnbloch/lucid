@@ -38,6 +38,7 @@ def read_ast_field(prog):
     json_path = os.path.join(os.path.dirname(__file__), json_filename)
     with open(json_path, 'r') as json_file:
         data = json.load(json_file)
+    print(data["AST"])
     return data["AST"]
 
 # gets the conditions in SMT-LIB  

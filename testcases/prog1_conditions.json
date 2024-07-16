@@ -1,12 +1,10 @@
 {
-  "variables": [ "dst", "ingress_port", "src" ],
+  "variables": [ "egress", "ingress_port" ],
   "conditions": [
-    { "condition": "dst>150", "smtlib": "(> dst 150)" },
-    { "condition": "src<90", "smtlib": "(< src 90)" },
     {
-      "condition": "src>100&&dst<2003&&ingress_port==0",
-      "smtlib": "(and (and (> src 100) (< dst 2003)) (= ingress_port 0))"
+      "condition": "egress==ingress_port",
+      "smtlib": "(= egress ingress_port)"
     }
   ],
-  "AST": "src>100&&dst<2003&&ingress_port==0 (src<90 () ()) (dst>150 () ())"
+  "AST": "egress==ingress_port () ()"
 }
