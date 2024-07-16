@@ -1,17 +1,13 @@
 /* 
-  The static forwarder, modified to 
-  not reflect packets out of the 
-  same port that they entered from. 
+  A simple static forwarder
+   - Applies a static table for forwarding
 
-  differential specification:
-    # if the packet from static_fwd had an 
-    # egress port equal to its ingress port, 
-    # then the packet from static_fwd_noloop
-    # should have egress_port equal to CONTROL_PORT
-      (old_out.ingress_port == old_out.egress_port)
-        => new_out.egress_port == CONTROL_PORT
-    # (implicit: nothing else should have changed)
 
+  A change that we might want to make
+  is to drop packets that would be reflected 
+  out of the same port that they came from. 
+  (Or perhaps send those packets to a control 
+  server)
 */
 
 type port = int<16>
@@ -20,23 +16,20 @@ type port = int<16>
 // comes from / goes to,
 // all other ports are connected to local devices
 const port EXTERNAL_PORT = 10;
-const port CONTROL_PORT = 20;
 
 // static forwarding table
 // one entry for each local device
-fun port fwd_table(int dst) {
-  match dst with 
-  | 100 -> {return 1;}
-  | 200 -> {return 2;}
-  | 300 -> {return 3;}
-  | 400 -> {return 4;} 
-  | _   -> {return EXTERNAL_PORT;}
+fun port fwd(int dst) {
+  if(dst == 100){
+    return 1;
+  }
+  if(dst == 200){
+    return 2;
+  }
+  return 3;
 }
 
 event pkt(int src, int dst, int sport, int dport) {
-    if(dst == 100){
-        return 0;
-    }else{
-        return 1;
-    }
+    port egress = fwd(dst);
+    generate_port(egress, this);
 }
