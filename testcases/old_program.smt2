@@ -1,6 +1,6 @@
 (declare-const dst_ip Int)
 (assert (not (= dst_ip 100)))
 (assert (not (= dst_ip 200)))
-(assert (not (and (> dst_ip 300) (< dst_ip 400))))
+(assert (not (= dst_ip 300)))
 (check-sat)
 (get-model)
