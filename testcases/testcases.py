@@ -107,13 +107,12 @@ def main():
             gen_config(pkt, prog2)
             out1 = run_prog(prog1+".dpt")[0]
             out2 = run_prog(prog2+".dpt")[0]
-            if(validate_outputs(out1, out2, relation)):
-                print("Test Case Passed")
-            else:
+            if(not validate_outputs(out1, out2, relation)):
                 print("Test Case Failed")
                 print(prog1+" => " + str(out1))
                 print(prog2+" => " + str(out2))
-
+                return
+                
         condition.pop()
         condition.push()
         condition.add(Not(ast_to_z3(predicate)))
@@ -124,14 +123,12 @@ def main():
             out1 = run_prog(prog1+".dpt")[0]
             out2 = run_prog(prog2+".dpt")[0]
             default_relation = lambda out1, out2 : out1.port == out2.port and out1.dst_ip == out2.dst_ip and out1.src_ip == out2.src_ip
-            if(validate_outputs(out1, out2, default_relation)):
-                print("Test Case Passed")
-            else:
+            if(not validate_outputs(out1, out2, default_relation)):
                 print("Test Case Failed")
                 print(prog1+" => " + str(out1))
                 print(prog2+" => " + str(out2))
-
-
+                return
+    print("Test Case Passed")
     # # 1) use z3 to find input packet that satisfies predicate
     # packet_stream = gen_pkt_stream(predicate, predicate_char_mapping)
     # # 2) create config files for prog1 and prog2 with same input packet
