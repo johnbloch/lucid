@@ -4,8 +4,8 @@
         {
             "name": "ip_pkt",
             "args": [
-                252,
-                252
+                0,
+                0
             ],
             "locations": [
                 "0:0"

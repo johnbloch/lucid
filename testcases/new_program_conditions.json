@@ -1,0 +1,9 @@
+{
+  "variables": [ "dst" ],
+  "conditions": [
+    { "condition": "dst==200", "smtlib": "(= dst 200)" },
+    { "condition": "dst==100", "smtlib": "(= dst 100)" },
+    { "condition": "dst<=90", "smtlib": "(<= dst 90)" }
+  ],
+  "AST": "dst<=90 (dst==100 () ()) (dst==200 () ())"
+}

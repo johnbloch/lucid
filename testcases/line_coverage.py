@@ -31,14 +31,13 @@ def run_astparser(prog):
     path = os.path.join(os.getcwd(), prog)
     os.chdir(get_astparser_dir())
     subprocess.run(f"./astparser {path}", shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
+    
 # reads the string representation of program's AST
 def read_ast_field(prog):
     json_filename = f"{prog.split('.')[0]}_conditions.json"
     json_path = os.path.join(os.path.dirname(__file__), json_filename)
     with open(json_path, 'r') as json_file:
         data = json.load(json_file)
-    print(data["AST"])
     return data["AST"]
 
 # gets the conditions in SMT-LIB  
@@ -111,11 +110,7 @@ def generate_smt_lib(vars, constraints, prog):
         f.write("(check-sat)\n")
         f.write("(get-model)\n")
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python line_coverage.py prog.dpt")
-        sys.exit(1)
-    prog = sys.argv[1]
+def get_path_conditions(prog):
     run_astparser(prog)
     ast_string = read_ast_field(prog)
     ast = parse_ast(ast_string)
@@ -125,13 +120,16 @@ if __name__ == "__main__":
     path = paths[0]
     mapping = read_smt_mappings(prog)
     vars = get_variables(prog)
+    path_conditions = []
     for path in paths:
         path = [(mapping[c], b) for c, b in path]
         generate_smt_lib(vars, path, prog)
         solver = Solver()
         solver.from_file(prog.split(".")[0]+".smt2")
-        if solver.check() == sat:
-            model = solver.model()
-            print(model)
-        else:
-            print("dead code")
+        path_conditions.append(solver)
+        # if solver.check() == sat:
+        #     model = solver.model()
+        #     #print(model)
+        # else:
+        #     print("dead code")
+    return path_conditions

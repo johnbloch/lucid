@@ -1,10 +1,12 @@
 from z3 import *
 from ip_utils import *
 from PredicateEncoding import *
+from line_coverage import *
 import json
 import subprocess
 import os
 import rstr
+from datetime import datetime
 
 # next step (monday/tuesday): make predicate text input and create parser
 
@@ -25,35 +27,30 @@ def gen_pkt_stream(predicate, char_mapping):
         stream.append(pkt)
     return stream
 
-# takes a predicate (as a Z3 constraint) and generates a packet that satisfies the predicate
-def gen_pkt(predicate):
+# takes a Z3 solver object and generates a packet that satisfies the constraints
+def gen_pkt(s):
     src_ip = Int('src_ip')
     dst_ip = Int('dst_ip')
     port = Int('port')
-    s=Solver()
-    s.add(ast_to_z3(predicate))
     if s.check() == sat:
         m = s.model()
-        packet = IP_pkt(m[src_ip].as_long(), m[dst_ip].as_long(), m[port].as_long())
+        packet = IP_pkt(0 if m[src_ip] == None else m[src_ip].as_long(), 0 if m[dst_ip] == None else m[dst_ip].as_long(), 0 if m[port] == None else m[port].as_long())
         return packet
     else:
         return None
 
 # takes a list of packet objects and file name and generates a config file that sends the packet stream
-def gen_config(pkt_stream, file_name):
+def gen_config(pkt, file_name):
     config = {}
     config["max time"] = 9999999999
     event = {}
     config["events"] = []
-    t = 0
-    for pkt in pkt_stream:
-        event = {}
-        event["name"] = "ip_pkt"
-        event["args"] = [pkt.src_ip, pkt.dst_ip]
-        event["locations"] = [f"0:{pkt.port}"]
-        event["timestamp"] = t
-        t += 600
-        config["events"].append(event)
+    event = {}
+    event["name"] = "ip_pkt"
+    event["args"] = [pkt.src_ip, pkt.dst_ip]
+    event["locations"] = [f"0:{pkt.port}"]
+    event["timestamp"] = 0
+    config["events"].append(event)
     json_obj = json.dumps(config, indent=4)
     with open(file_name+".json", "w") as file:
         file.write(json_obj)
@@ -97,27 +94,63 @@ def main():
     exec(file_contents, globals())
     prog1 = globals()['prog1']
     prog2 = globals()['prog2']
-    predicate_char_mapping = globals()['predicate_char_mapping']
-    predicates = globals()['predicates']
-    relations = globals()['relations']
-    for i in range(len(predicates)):
-        predicate, relation = predicates[i], relations[i]
-        # 1) use z3 to find input packet that satisfies predicate
-        packet_stream = gen_pkt_stream(predicate, predicate_char_mapping)
-        # 2) create config files for prog1 and prog2 with same input packet
-        gen_config(packet_stream, prog1)
-        gen_config(packet_stream, prog2)
-        
-        # # 3) read outputs of prog1 and prog2 and use relation to either pass/fail test case
-        out1 = run_prog(prog1 + ".dpt")
-        out2 = run_prog(prog2 + ".dpt")
+    predicate = globals()['predicate']
+    relation = globals()['relation']
+    path_conditions = get_path_conditions(prog1 +".dpt")
+    for condition in path_conditions:
 
-        if validate_outputs(out1, out2, relation):
-            print("Test Case Passed")
-        else:
-            print("Test Case Failed")
-        print("prog1 => " + str(out1))
-        print("prog2 => " + str(out2))
+        condition.push()
+        condition.add(ast_to_z3(predicate))
+        pkt = gen_pkt(condition)
+        if pkt:
+            gen_config(pkt, prog1)
+            gen_config(pkt, prog2)
+            out1 = run_prog(prog1+".dpt")[0]
+            out2 = run_prog(prog2+".dpt")[0]
+            if(validate_outputs(out1, out2, relation)):
+                print("Test Case Passed")
+            else:
+                print("Test Case Failed")
+                print(prog1+" => " + str(out1))
+                print(prog2+" => " + str(out2))
+
+        condition.pop()
+        condition.push()
+        condition.add(Not(ast_to_z3(predicate)))
+        pkt = gen_pkt(condition)
+        if pkt: 
+            gen_config(pkt, prog1)
+            gen_config(pkt, prog2)
+            out1 = run_prog(prog1+".dpt")[0]
+            out2 = run_prog(prog2+".dpt")[0]
+            default_relation = lambda out1, out2 : out1.port == out2.port and out1.dst_ip == out2.dst_ip and out1.src_ip == out2.src_ip
+            if(validate_outputs(out1, out2, default_relation)):
+                print("Test Case Passed")
+            else:
+                print("Test Case Failed")
+                print(prog1+" => " + str(out1))
+                print(prog2+" => " + str(out2))
+
+
+    # # 1) use z3 to find input packet that satisfies predicate
+    # packet_stream = gen_pkt_stream(predicate, predicate_char_mapping)
+    # # 2) create config files for prog1 and prog2 with same input packet
+    # gen_config(packet_stream, prog1)
+    # gen_config(packet_stream, prog2)
+    
+    # # # 3) read outputs of prog1 and prog2 and use relation to either pass/fail test case
+    # out1 = run_prog(prog1 + ".dpt")
+    # out2 = run_prog(prog2 + ".dpt")
+
+    # if validate_outputs(out1, out2, relation):
+    #     print("Test Case Passed")
+    # else:
+    #     print("Test Case Failed")
+    # print(prog1+" => " + str(out1))
+    # print(prog2+" => " + str(out2))
 
 if __name__ == "__main__":
+    startTime = datetime.now()
     main()
+    print(str((datetime.now() - startTime).total_seconds()) + " sec")
+
