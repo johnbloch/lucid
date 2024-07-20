@@ -13,11 +13,7 @@ fun int get_output_port(int src_ip, int dst_ip) {
         return 2;
       }
     }else{
-      if(dst_ip == 300){
-        return 3;
-      }else{
-        return 4;
-      }
+      return 3;
     }
   }
 }

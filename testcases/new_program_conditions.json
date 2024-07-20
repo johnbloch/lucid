@@ -1,9 +1,9 @@
 {
-  "variables": [ "dst" ],
+  "variables": [ "dst_ip", "src_ip" ],
   "conditions": [
-    { "condition": "dst==200", "smtlib": "(= dst 200)" },
-    { "condition": "dst==100", "smtlib": "(= dst 100)" },
-    { "condition": "dst<=90", "smtlib": "(<= dst 90)" }
+    { "condition": "src_ip==100", "smtlib": "(= src_ip 100)" },
+    { "condition": "dst_ip==200", "smtlib": "(= dst_ip 200)" },
+    { "condition": "dst_ip==100", "smtlib": "(= dst_ip 100)" }
   ],
-  "AST": "dst<=90 (dst==100 () ()) (dst==200 () ())"
+  "AST": "dst_ip==100 () (dst_ip==200 (src_ip==100 () ()) ())"
 }

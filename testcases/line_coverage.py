@@ -129,7 +129,7 @@ def get_path_conditions(prog):
         path_conditions.append(solver)
         if solver.check() == sat:
             model = solver.model()
-            #print(model)
+            print(model)
         else:
             print("dead code")
     return path_conditions
