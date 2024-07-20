@@ -15,10 +15,14 @@ fun int get_output_port(int src_ip, int dst_ip) {
     }else{
       if(dst_ip == 300){
         return 3;
+      }else{
+        return 4;
       }
     }
   }
 }
+
+
 handle ip_pkt(int src_ip, int dst_ip) {
     int out_port = get_output_port(src_ip, dst_ip);
     generate_port(out_port, ip_pkt(src_ip, dst_ip));
