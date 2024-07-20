@@ -127,9 +127,12 @@ def get_path_conditions(prog):
         solver = Solver()
         solver.from_file(prog.split(".")[0]+".smt2")
         path_conditions.append(solver)
-        # if solver.check() == sat:
-        #     model = solver.model()
-        #     #print(model)
-        # else:
-        #     print("dead code")
+        if solver.check() == sat:
+            model = solver.model()
+            #print(model)
+        else:
+            print("dead code")
     return path_conditions
+
+if __name__ == "__main__":
+    get_path_conditions(sys.argv[1])

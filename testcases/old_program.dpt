@@ -3,9 +3,113 @@ event count_src (int src_ip);
 
 // component: basic packet forwarding
 fun int get_output_port(int src_ip, int dst_ip) {
-  ...
-  ...
-  ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   if(dst_ip == 100){
     return 1;
   }else{
@@ -15,9 +119,8 @@ fun int get_output_port(int src_ip, int dst_ip) {
       if(dst_ip == 300){
         return 3;
       }
-  ... 
-  ...
-  ...
+
+
     else{
         return 4;
       }

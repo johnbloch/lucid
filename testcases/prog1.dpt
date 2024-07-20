@@ -1,8 +1,9 @@
-event ip_pkt (int src_ip, int dst_ip);
+event pkt (int src_ip, int dst_ip, int sport, int dport);
 event count_src (int src_ip);
 
 // component: basic packet forwarding
-fun port fwd(int dst_ip) {
+
+fun int fwd(int dst_ip) {
   if(dst_ip > 10){
     if(dst_ip < 15){
       return 1;
@@ -17,7 +18,7 @@ fun port fwd(int dst_ip) {
     }
   }
 }
-handle ip_pkt(int src_ip, int dst_ip) {
-    int out_port = get_output_port(src_ip, dst_ip, ingress_port);
-    generate_port(out_port, ip_pkt(src_ip, dst_ip));
+event pkt(int src_ip, int dst_ip, int sport, int dport) {
+    int egress = fwd(dst_ip);
+    generate_port(egress, this);
 }
