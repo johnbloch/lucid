@@ -149,5 +149,5 @@ def main():
 if __name__ == "__main__":
     startTime = datetime.now()
     main()
-    # print(str((datetime.now() - startTime).total_seconds()) + " sec")
+    print(str((datetime.now() - startTime).total_seconds()) + " sec")
 

@@ -3,21 +3,3464 @@ event count_src (int src_ip);
 
 // component: basic packet forwarding
 fun int get_output_port(int src_ip, int dst_ip) {
-  if(dst_ip == 100){
-    return 1;
+  if(src_ip==100){
+    return 0;
   }else{
-    if(dst_ip == 200){
-      if(src_ip == 100){
-        return 1;
-      }else{
-        return 2;
-      }
-    }else{
-      return 3;
-    }
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    if(src_ip==100){
+    return 0;
+  }else{
+    return 0;
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
   }
 }
-
 
 handle ip_pkt(int src_ip, int dst_ip) {
     int out_port = get_output_port(src_ip, dst_ip);

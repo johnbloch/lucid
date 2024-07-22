@@ -4,6 +4,7 @@ import sys
 from z3 import *
 import testcases
 import json
+from datetime import datetime
 
 # write a script that takes prog_conditions.json and generates a list of inputs that achieves full line coverage
 # 1) create a AST class with if/else nodes
@@ -132,7 +133,10 @@ def get_path_conditions(prog):
             print(model)
         else:
             print("dead code")
+    print(len(path_conditions))
     return path_conditions
 
 if __name__ == "__main__":
+    startTime = datetime.now()
     get_path_conditions(sys.argv[1])
+    print(str((datetime.now() - startTime).total_seconds()) + " sec")

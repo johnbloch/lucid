@@ -2,9 +2,9 @@ from ip_utils import *
 from z3 import *
 from PredicateEncoding import *
 
-prog1 = "old_program"
-prog2 = "new_program"
-predicate = (VarExp('dst_ip') ** IntExp(200)) & (VarExp('src_ip') ** IntExp(100))
-relation = lambda out : out.port == 1
+prog1 = "prog1"
+prog2 = "prog2"
+predicate = (VarExp('dst_ip') ** IntExp(50))
+relation = lambda out1, out2 : out2.port == 1
 
 
